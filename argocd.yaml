@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/vishuit/visood
+    repoURL: https://github.com/vishuit/visood_argo.git
     targetRevision: HEAD
     path: app
   destination: 
