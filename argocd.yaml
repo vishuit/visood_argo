@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://github.com/vishuit/visood_argo.git
     targetRevision: HEAD
@@ -12,18 +13,11 @@ spec:
   destination: 
     server: https://kubernetes.default.svc
     namespace: default
+
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
+
     automated:
       selfHeal: true
       prune: true
-  postSync:
-    resources:
-      - name: myapp-pod
-        kind: Pod
-        namespace: default
-    hooks:
-      - script: |
-          #!/bin/bash
-          echo "Hello, World!"
