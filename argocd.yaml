@@ -18,5 +18,12 @@ spec:
     automated:
       selfHeal: true
       prune: true
-
-
+  postSync:
+    resources:
+      - name: myapp-pod
+        kind: Pod
+        namespace: default
+    hooks:
+      - script: |
+          #!/bin/bash
+          echo "Hello, World!"
