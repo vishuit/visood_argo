@@ -18,8 +18,14 @@ spec:
     automated:
       selfHeal: true
       prune: true
-  info:
-    postSync:
-      - container:
-          image: busybox
-          command: ["sh", "-c", "echo Hello"]
+  
+  postSync:
+    resources:
+      - group: ''
+        kind: Pod
+        name: my-pod
+    script:
+      name: hello-world
+      image: alpine
+      command: ['echo', 'Hello, World!']
+
