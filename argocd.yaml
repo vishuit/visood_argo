@@ -18,14 +18,5 @@ spec:
     automated:
       selfHeal: true
       prune: true
-  
-  postSync:
-    resources:
-      - group: ''
-        kind: Pod
-        name: my-pod
-    script:
-      name: hello-world
-      image: alpine
-      command: ['echo', 'Hello, World!']
+
 
